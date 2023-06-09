@@ -22,7 +22,7 @@ export default {
         raleway: ["Raleway"],
       },
       colors: {
-        primary: "#0062FF",
+        primary: "#1685A4",
       }
     },
   },

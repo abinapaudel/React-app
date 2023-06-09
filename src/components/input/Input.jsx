@@ -1,3 +1,5 @@
+
+
 const Input = ({title, onChange, values, type}) => {
   return (
     <input
@@ -9,5 +11,13 @@ const Input = ({title, onChange, values, type}) => {
     />
   );
 };
+
+Input.propTypes = {
+  title: Input.string,
+  onChange: Input.func,
+  values: Input.string,
+  type: Input.string
+};
+
 
 export default Input;
