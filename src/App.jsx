@@ -4,7 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Post from "./pages/admin/post/Post";
 import UserList from "./pages/users/UserList";
-import SideNavbar from "./pages/admin/navbar/SideNavbar";
+import SideNavbar from "./components/navbar/SideNavbar";
 import { useSelector } from "react-redux";
 import DashboardPage from "./pages/DashboardPage";
 

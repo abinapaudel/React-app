@@ -2,7 +2,6 @@ import Dashboard from "../assets/DashboardIcon.png";
 import User from "../assets/UsersIcon.png";
 import Post from "../assets/PostIcon.png";
 import Comments from "../assets/CommentsIcon.png";
-import Logout from "../assets/LogoutIcon.png";
 
 export const NavLinks = [
   {
@@ -28,11 +27,5 @@ export const NavLinks = [
     title: "Comments",
     src: Comments,
     href: "/comments",
-  },
-  {
-    id: "logout",
-    title: "Log out",
-    src: Logout,
-    // href: "/logout",
   },
 ];

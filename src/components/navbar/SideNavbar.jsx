@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { NavLinks } from "../../../utils/dataList";
+import { NavLinks } from "../../utils/dataList";
 
 const SideNavbar = ({ children }) => {
   const [open, setOpen] = useState(false);
+
   const navigate = useNavigate();
   return (
     <>
@@ -16,6 +17,15 @@ const SideNavbar = ({ children }) => {
             </span>
           </a>
           <div className="flex items-center md:order-2">
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/sign-in");
+              }}
+              className="items-center bg-gray-200 font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 mr-4"
+            >
+              Logout
+            </button>
             <button
               type="button"
               className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
