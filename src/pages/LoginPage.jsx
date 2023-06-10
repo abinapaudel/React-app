@@ -83,10 +83,10 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="flex flex-row gap-4">
-            <span className="text-black w-full text-md text-start">
+            <span className="text-black w-full text-md text-start cursor-pointer">
               Remember password
             </span>
-            <span className="text-black w-full text-sm text-end underline">
+            <span className="text-black w-full text-sm text-end underline cursor-pointer">
               Forgot Password?
             </span>
           </div>
