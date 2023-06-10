@@ -6,50 +6,40 @@ import ButtonText from "..//components/button/ButtonText";
 import AuthButton from "../components/button/AuthButton";
 import Input from "../components/input/Input.jsx";
 import { useState } from "react";
-import { useEffect } from "react";
+import { loginSuccess, loginFailure } from "../redux/actions/authActions";
+import { useDispatch } from "react-redux";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const initialValues = { email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({...formValues, [name]: value });
+  const handleLogin = () => {
+    // event.preventDefault();
+    if (email === "admin@admin.com" && password === "12345678") {
+      dispatch(loginSuccess());
+      navigate("/");
+    } else {
+      const errors = {};
+      if (!email) {
+        errors.email = "Email is required";
+      }
+      if (!password) {
+        errors.password = "Password is required";
+      }
+      setFormErrors(errors);
+      dispatch(loginFailure());
+    }
   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
-  useEffect(() => {
-    if(Object.keys(formErrors).length === 0 && isSubmit){
-    console.log(formValues);
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {}
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if(!values.email) {
-      errors.email = "Username is required";
-    }
-    if(!values.password) {
-      errors.password = "Password is required!"
-    }
-    return errors;
-};
 
   return (
     <div>
       <div className="bg-gray-100 sm:justify-center sm:items-center flex flex-col h-screen w-full">
         <form
-          onSubmit={handleSubmit}
           className="px-10 bg-white drop-shadow-2xl rounded-md"
+          onSubmit={handleLogin}
         >
           <div className="flex justify-center mt-5">
             <img src={logo} alt="" className="sm-block w-20 h-20" />
@@ -70,9 +60,10 @@ const LoginPage = () => {
             <div className="flex flex-col mb-2 ">
               <span className="mb-2 text-md font-bold">Email</span>
               <Input
+                type="email"
                 title="Your Email"
-                values={formValues.email}
-                onChange={handleChange}
+                values={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {formErrors.email}
@@ -82,9 +73,9 @@ const LoginPage = () => {
               <span className="mb-2 text-md">Password</span>
               <Input
                 title="Your Password"
-                values={formValues.password}
+                values={password}
                 type="password"
-                onChange={handleChange}
+                onChange={(event) => setPassword(event.target.value)}
               />
               <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {formErrors.password}
@@ -99,9 +90,9 @@ const LoginPage = () => {
               Forgot Password?
             </span>
           </div>
-          <AuthButton text="Login" />
+          <AuthButton text="Login" onClick={handleLogin} />
           <div className="text-center mb-5">
-            Don't have an account?
+            Dont have an account?
             <span
               onClick={() => {
                 navigate("/sign-up");

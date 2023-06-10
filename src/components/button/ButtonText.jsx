@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ButtonText = ({ text, image, onClick }) => {
   return (
     <button
@@ -10,5 +12,9 @@ const ButtonText = ({ text, image, onClick }) => {
     </button>
   );
 };
-
+ButtonText.propTypes = {
+  text: PropTypes.string,
+  image: PropTypes.string,
+  onClick: PropTypes.func,
+};
 export default ButtonText;

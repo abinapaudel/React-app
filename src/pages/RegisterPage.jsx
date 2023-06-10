@@ -1,6 +1,6 @@
 import GoogleLogo from "../assets/google.svg";
 import FacebookIcon from "../assets/facebook.svg";
-import logo from "../assets/Logo.png";
+import logo from "../assets/companyLogo.png";
 import ButtonText from "..//components/button/ButtonText";
 import AuthButton from "../components/button/AuthButton";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ const RegisterPage = () => {
       <div className="bg-gray-100 sm:justify-center sm:items-center flex flex-col h-screen w-full">
         <form className="px-10 bg-white drop-shadow-2xl rounded-md">
           <div className="flex justify-center mt-5">
-            <img src={logo} alt="" className="sm-block w-30 h-20" />
+            <img src={logo} alt="" className="sm-block w-20 h-20" />
           </div>
           <h1 className="text-primary font-bold md-text-5xl text-3xl my-5 max-w-3xl font-raleway text-center">
             Register your account
@@ -40,14 +40,6 @@ const RegisterPage = () => {
           <div className="flex flex-col mb-2 font-bold ">
             <span className="mb-2 text-md">Password</span>
             <Input title="Password" onChange={() => {}} />
-          </div>
-          <div className="flex flex-row gap-4">
-            <span className="text-black w-full text-md text-start">
-              Remember password
-            </span>
-            <span className="text-black w-full text-sm text-end underline">
-              Forgot Password?
-            </span>
           </div>
           <AuthButton text="Login" />
           <div className="text-center text-gray-400 mb-5">

@@ -1,23 +1,22 @@
+import PropTypes from "prop-types";
 
-
-const Input = ({title, onChange, values, type}) => {
+const Input = ({ type, title, value, onChange }) => {
   return (
     <input
-      type={type}
       className="w-full border border-gray-200 text-md px-10 rounded-lg mb-6 py-2 placeholder:font-light placeholder:text-gray bg-white"
-      placeholder= {title}
-      value = {values}
+      type={type}
+      placeholder={title}
+      value={value}
       onChange={onChange}
     />
   );
 };
 
 Input.propTypes = {
-  title: Input.string,
-  onChange: Input.func,
-  values: Input.string,
-  type: Input.string
+  type: PropTypes.string,
+  title: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };
-
 
 export default Input;
