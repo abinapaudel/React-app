@@ -58,7 +58,7 @@ const SideNavbar = ({ children }) => {
             onClick={() => setOpen(!open)}
             className={`absolute cursor-pointer mt-2 rounded-full right-5 w-9 border-2 border-dark-purple`}
           />
-          <ul className={`pl-5 items-center ${open ? "mt-0" : "mt-10"}`}>
+          <ul className={`pl-5 ${open ? "mt-0" : "mt-10"}`}>
             {NavLinks.map((link, index) => (
               <li
                 key={index}

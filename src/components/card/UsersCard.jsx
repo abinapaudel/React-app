@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const UsersCard = () => {
   const users = useSelector((state) => state.allUsers.users);
-  const renderList = users.map((user) => {
+  const renderUser = users.map((user) => {
     const { id, name, address, phone, email } = user;
     return (
       <div className="bg-white shadow-xl rounded-lg py-3" key={id}>
@@ -17,19 +17,19 @@ const UsersCard = () => {
           <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
             {name}
           </h3>
-          <div className="text-center text-gray-400 text-xs font-semibold">
+          <div className="text-center text-gray-400 text-sm font-semibold">
             <p>{email}</p>
           </div>
-          <table className="text-xs my-3">
+          <table className="text-sm my-2">
             <tbody>
               <tr>
                 <td className="px-2 py-2 text-gray-500 font-semibold">
-                  Address
+                  Address:
                 </td>
                 <td className="px-2 py-2">{address.street}</td>
               </tr>
               <tr>
-                <td className="px-2 py-2 text-gray-500 font-semibold">Phone</td>
+                <td className="px-2 py-2 text-gray-500 font-semibold">Phone:</td>
                 <td className="px-2 py-2">{phone}</td>
               </tr>
             </tbody>
@@ -37,7 +37,7 @@ const UsersCard = () => {
 
           <div className="text-center my-3">
             <a
-              className="text-xs text-indigo-500 font-sans hover:underline hover:text-indigo-600 font-medium"
+              className="text-sm text-primary font-sans hover:underline hover:text-indigo-600 font-medium"
               href="#"
             >
               View Profile
@@ -47,7 +47,7 @@ const UsersCard = () => {
       </div>
     );
   });
-  return <>{renderList}</>;
+  return <>{renderUser}</>;
 };
 
 export default UsersCard;

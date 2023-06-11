@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const CommentsCard = () => {
   const comments = useSelector((state) => state.allComments.comments);
-  const renderList = comments.map((comment) => {
+  const renderComment = comments.map((comment) => {
     const { id, name, email, body } = comment;
     return (
       <div className="bg-white shadow-xl rounded-lg py-3" key={id}>
@@ -23,7 +23,7 @@ const CommentsCard = () => {
       </div>
     );
   });
-  return <>{renderList}</>;
+  return <>{renderComment}</>;
 };
 
 export default CommentsCard;

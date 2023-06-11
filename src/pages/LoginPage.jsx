@@ -44,7 +44,7 @@ const LoginPage = () => {
           <div className="flex justify-center mt-5">
             <img src={logo} alt="" className="sm-block w-20 h-20" />
           </div>
-          <h1 className="text-primary font-bold md-text-5xl text-3xl my-5 max-w-3xl font-raleway text-center">
+          <h1 className="text-primary font-bold md-text-2xl text-2xl my-5 font-lato text-center">
             Sign in to your account
           </h1>
           <div className="flex sm:flex-1 flex-col sm:flex-row sm:gap-4">
@@ -58,7 +58,7 @@ const LoginPage = () => {
           </div>
           <div className="flex sm:flex-1 flex-col sm:flex-row sm:gap-4">
             <div className="flex flex-col mb-2 ">
-              <span className="mb-2 text-md font-bold">Email</span>
+              <span className="mb-2 text-md font-bold font-lato">Email</span>
               <Input
                 type="email"
                 title="Your Email"
@@ -70,7 +70,7 @@ const LoginPage = () => {
               </span>
             </div>
             <div className="flex flex-col mb-2 font-bold ">
-              <span className="mb-2 text-md">Password</span>
+              <span className="mb-2 text-md font-lato">Password</span>
               <Input
                 title="Your Password"
                 values={password}
@@ -83,15 +83,15 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="flex flex-row gap-4">
-            <span className="text-black w-full text-md text-start cursor-pointer">
+            <span className="text-black w-full text-md text-start cursor-pointer font-lato">
               Remember password
             </span>
-            <span className="text-black w-full text-sm text-end underline cursor-pointer">
+            <span className="text-black w-full text-sm text-end underline cursor-pointer font-lato">
               Forgot Password?
             </span>
           </div>
           <AuthButton text="Login" onClick={handleLogin} />
-          <div className="text-center mb-5">
+          <div className="text-center mb-5 font-lato">
             Dont have an account?
             <span
               onClick={() => {

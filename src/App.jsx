@@ -33,8 +33,7 @@ const MainRoutes = () => {
 const App = () => {
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
 
-  console.log(isAuthenticated);
-  return <div>{isAuthenticated ? <MainRoutes /> : <AuthRoutes />}</div>;
+  return <div>{isAuthenticated ? <AuthRoutes /> : <MainRoutes />}</div>;
 };
 
 export default App;

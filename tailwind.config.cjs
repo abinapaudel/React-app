@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 export default {
   content: [
     "./index.html",
@@ -18,8 +19,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans"],
-        raleway: ["Raleway"],
+        sans: ["Abhaya Kibre"],
+        // raleway: ["Raleway"],
+        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
+        lato: ["Lato", ...defaultTheme.fontFamily.sans]
       },
       colors: {
         primary: "#1685A4",

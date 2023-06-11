@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const PostsCard = () => {
   const posts = useSelector((state) => state.allPosts.posts);
-  const renderList = posts.map((post) => {
+  const renderPost = posts.map((post) => {
     const { id, title, body } = post;
     return (
       <div className="bg-white shadow-xl rounded-lg py-3" key={id}>
@@ -17,17 +17,17 @@ const PostsCard = () => {
           />
         </div>
         <div className="p-2">
-          <div className="text-center text-gray-400 text-xs font-semibold">
+          <div className="text-center text-sm">
             <p>{title}</p>
           </div>
-          <div className="text-center text-gray-400 text-xs font-semibold">
+          <div className="text-center text-gray-400 text-sm">
             <p>{body}</p>
           </div>
         </div>
       </div>
     );
   });
-  return <>{renderList}</>;
+  return <>{renderPost}</>;
 };
 
 export default PostsCard;

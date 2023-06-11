@@ -32,7 +32,7 @@ export const commentReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-
+ //ASSIGNING THE STATE TO THE INITIAL STATE
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS":

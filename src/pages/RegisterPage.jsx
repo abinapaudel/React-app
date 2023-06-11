@@ -15,7 +15,7 @@ const RegisterPage = () => {
           <div className="flex justify-center mt-5">
             <img src={logo} alt="" className="sm-block w-20 h-20" />
           </div>
-          <h1 className="text-primary font-bold md-text-5xl text-3xl my-5 max-w-3xl font-raleway text-center">
+          <h1 className="text-primary font-bold md-text-5xl text-3xl my-3 max-w-3xl font-raleway text-center">
             Register your account
           </h1>
           <div className="flex sm:flex-1 flex-col sm:flex-row sm:gap-4">
@@ -28,27 +28,27 @@ const RegisterPage = () => {
             <div className="flex-grow border-t border-gray-400"></div>
           </div>
           <div className="flex sm:flex-1 flex-col sm:flex-row sm:gap-4">
-            <div className="flex flex-col mb-2 ">
-              <span className="mb-2 text-md font-bold">Name</span>
+            <div className="flex flex-col ">
+              <span className="mb-2 text-md font-bold font-lato">Name</span>
               <Input title="Your Name" onChange={() => {}} />
             </div>
-            <div className="flex flex-col mb-2 font-bold ">
-              <span className="mb-2 text-md">Email</span>
+            <div className="flex flex-col font-bold ">
+              <span className="mb-2 text-md font-lato">Email</span>
               <Input title="Email" onChange={() => {}} />
             </div>
           </div>
-          <div className="flex flex-col mb-2 font-bold ">
-            <span className="mb-2 text-md">Password</span>
+          <div className="flex flex-col font-bold ">
+            <span className="mb-2 text-md font-lato">Password</span>
             <Input title="Password" onChange={() => {}} />
           </div>
           <AuthButton text="Login" />
-          <div className="text-center text-gray-400 mb-5">
+          <div className="text-center text-gray-400 mb-5 font-lato">
             Already have an account?
             <span
               onClick={() => {
                 navigate("/sign-in");
               }}
-              className="text-primary text-black cursor-pointer pointer-events-auto focus:pointer-events-auto"
+              className="text-primary text-black cursor-pointer pointer-events-auto focus:pointer-events-auto font-lato"
             >
               {" "}
               Sign in
